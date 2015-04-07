@@ -10,19 +10,20 @@ class UsersController < ApplicationController
 
   def attempt_login
     if params[:username].present? && params[:password].present?
-      @found_user = User.where(username: params[:username]).first
-        if @found_user
-          authorized_user = @found_user.authenticate(params[:password])
-          session[:user_id] = @found_user.id
-          redirect_to map_path
-        else 
-          #flash message
-          flash.now[:notice] = "Wrong username or password. Please try again."
-          render :login
-        end
-      else
-        flash.now[:notice] = "Username and Password can't be blank."
-        render :login
+      found_user = User.find_by_username params[:username]
+      if found_user
+        authorized_user = found_user.authenticate params[:password]
+      end
+    end
+    if !found_user
+      flash.now[:notice] = "Wrong username or password. Please try again."
+      render :login
+    elsif !authorized_user
+      flash.now[:notice] = "Wrong username or password. Please try again."
+      render :login
+    else
+      session[:user_id] = authorized_user.id
+      redirect_to map_path
     end
   end
 

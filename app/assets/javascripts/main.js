@@ -1,6 +1,7 @@
 var result, map, Lat, Lng, myLatLng, latitude, longitude, city, state, neighborhood, weather, wuCity, wuNeighborhood, wuStationID, placesArray = [], placesMarker, mapClickHood;
 
 function initialize() {
+  $("#map-canvas").empty();
   var markers = [];
   var rendererOptions = {
     draggable: true
@@ -24,6 +25,7 @@ function initialize() {
 
   var styleArray = 
     [
+
         {
             "featureType": "administrative.locality",
             "elementType": "all",
@@ -195,6 +197,7 @@ function initialize() {
       }
     ];
 
+
 var styledMap = new google.maps.StyledMapType(styleArray,
     {name: "Styled Map"});
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -238,7 +241,6 @@ var styledMap = new google.maps.StyledMapType(styleArray,
   }
 }  //END OF INTIALIZE FUNCTION
 
-
 google.maps.event.addDomListener(window, 'load', initialize);
 
 $(document).ready(function() {
@@ -248,7 +250,6 @@ $(document).ready(function() {
   });
 
   function clearData() {
-    // $("#hoodnameandfave").empty();
     $("#city-summary").empty();
     $("#people").empty();
     $("#characteristics").empty();
@@ -445,10 +446,9 @@ function mapCall() {
     var url = "/search.json";
     $.getJSON(url, {city:city, state:state, neighborhood:neighborhood}, function(data) {
       zillow = data.zillowData;
+      console.log(zillow);
       weather = data.weatherData.location.nearby_weather_stations.pws.station;
-      zillowAPIData();
-      // commented out on 3/11 in order to avoid API usage spikes
-
+      // zillowAPIData();
       // findWUStation();
       // weatherCall();
     });
@@ -466,29 +466,27 @@ function mapCall() {
   //   }
   // }
 
-  function weatherCall() {
-    if (!wuStationID) {
-      $("#weather").append("<p class='bolded'> Weather Info</p>");
-      $("#weather").append("<p>No weather stations for this neighborhood!</p>");
-    } else {
-      var wuURL = "https://api.wunderground.com/api/acf7fb055f9d4a5d/conditions/q/pws:" + wuStationID + ".json";
-      $.getJSON(wuURL, function(data) {
-        weather = data.current_observation;
-        $("#weather").append("<p class='bolded'> Weather Info</p>");
-        $("#weather").append("<p>Current Temperature: " + weather.temperature_string + "</p>");
-        $("#weather").append("<p><img src='" + weather.icon_url + "'></p>");
-        $("#weather").append("<p>" + weather.weather + "</p>");
-        $("#weather").append("<p>Wind direction: " + weather.wind_dir + "</p>");
-        $("#weather").append("<p>Wind speed: " + weather.wind_gust_mph + "</p>");
-      });
-    }
-  }
+  // function weatherCall() {
+  //   if (!wuStationID) {
+  //     $("#weather").append("<p class='bolded'> Weather Info</p>");
+  //     $("#weather").append("<p>No weather stations for this neighborhood!</p>");
+  //   } else {
+  //     var wuURL = "https://api.wunderground.com/api/acf7fb055f9d4a5d/conditions/q/pws:" + wuStationID + ".json";
+  //     $.getJSON(wuURL, function(data) {
+  //       weather = data.current_observation;
+  //       $("#weather").append("<p class='bolded'> Weather Info</p>");
+  //       $("#weather").append("<p>Current Temperature: " + weather.temperature_string + "</p>");
+  //       $("#weather").append("<p><img src='" + weather.icon_url + "'></p>");
+  //       $("#weather").append("<p>" + weather.weather + "</p>");
+  //       $("#weather").append("<p>Wind direction: " + weather.wind_dir + "</p>");
+  //       $("#weather").append("<p>Wind speed: " + weather.wind_gust_mph + "</p>");
+  //     });
+  //   }
+  // }
 
   function zillowAPIData() {
+    
     clearData();
-    // $("#hoodnameandfave").append("<p class='bolded'> Neighborhood Information</p>");
-    // $("#hoodnameandfave").append("<p><i>Name of neighborhood here</i></p>");    
-    // $("#hoodnameandfave").append("<p><a href=''><span class='glyphicon glyphicon-star-empty' id='fav' aria-hidden='true'></span></a>Favorite this hood</p>");
 
     var livesHere = zillow.demographics.response.pages.page[2].segmentation.liveshere;
     $("#city-summary").append("<p class='bolded'> Resident Psychographics</p>");
@@ -676,8 +674,9 @@ function markPlaces(result, status) {
     );
     });
   
-
-
+  // $(".floatleft").click(window.location.reload());
+  
+  // google.maps.event.addDomListener(".floatleft", 'click', initialize);
 
 });
 

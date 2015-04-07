@@ -3,7 +3,7 @@
   <nav class="navbar navbar-default navbar-fixed-top mynav">
     <div class="container">
       <ul>
-      <div class="floatleft"><li id="nohover"><a href="/"><%= image_tag("header_icon.png") %></a></li></div> 
+      <div class="floatleft"><li id="nohover"><a href="javascript:history.go(0)"><%= image_tag("header_icon.png") %></a></li></div> 
       <div class="floatright"><li>Logged in as <i><%= @found_user.username %></i></li>
       <li><%= link_to "Favorites", favorites_path %></li>
       <li><%= link_to "About", about_path %></li>
@@ -64,7 +64,7 @@
     </div>
 
     <div class="col-xs-3 info-div">
-      <p class="text-left fav"><a><span class="glyphicon glyphicon-star" id="fav" aria-hidden="true"></span></a>&nbsp; Favorite</p>
+      <p class="text-left fav"><a><span class="glyphicon glyphicon-star-empty" id="fav" aria-hidden="true"></span></a>&nbsp; Favorite</p>
       <div class="text-left" id="people"></div>
       <div class="text-left" id="city-summary"></div>
       <div class="text-left" id="characteristics"></div>
