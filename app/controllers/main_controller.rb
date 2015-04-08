@@ -26,20 +26,19 @@ class MainController < ApplicationController
     )
     requestZillow.run
     @zillowData = JSON.parse(Hash.from_xml(requestZillow.response.body).to_json)
-    
-    # requestWeather = Typhoeus::Request.new(
-    #   "https://api.wunderground.com/api/acf7fb055f9d4a5d/geolookup/q/#{state}/#{wu_city}.json",
-    #   method: :get
-    # )
-    # requestWeather.run
-    # @weatherData = JSON.parse(requestWeather.response.body)
-    # respond_to do |format|
-    #   format.html
-    #   format.json { render json: {
-    #     :zillowData => @zillowData,
-    #     :weatherData => @weatherData 
-    #     }
-    #   }
+    requestWeather = Typhoeus::Request.new(
+      "https://api.wunderground.com/api/acf7fb055f9d4a5d/geolookup/q/#{state}/#{wu_city}.json",
+      method: :get
+    )
+    requestWeather.run
+    @weatherData = JSON.parse(requestWeather.response.body)
+    respond_to do |format|
+      format.html
+      format.json { render json: {
+        :zillowData => @zillowData,
+        :weatherData => @weatherData 
+        }
+      }
     end
   end
 

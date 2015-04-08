@@ -447,8 +447,8 @@ function mapCall() {
     $.getJSON(url, {city:city, state:state, neighborhood:neighborhood}, function(data) {
       zillow = data.zillowData;
       console.log(zillow);
-      weather = data.weatherData.location.nearby_weather_stations.pws.station;
-      // zillowAPIData();
+      // weather = data.weatherData.location.nearby_weather_stations.pws.station;
+      zillowAPIData();
       // findWUStation();
       // weatherCall();
     });

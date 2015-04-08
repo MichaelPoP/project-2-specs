@@ -11,7 +11,7 @@ feature "visitor logs in" do
         #exercise phase
         fill_in "Username", with: "DoyleMcpoyle"
         fill_in "Password", with: "pat"
-        click_button "Log in"
+        click_button "Go"
 
 
         #verify
@@ -22,7 +22,7 @@ feature "visitor logs in" do
 
         fill_in "Username", with: "asdf"
         fill_in "Password", with: "asdf"
-        click_button "Log in"
+        click_button "Go"
 
         expect(page).to have_content("Literally the best website ever. Username Password Don't have an account? Sign up here") #throw a flash message "invalid username or pw"
     end
