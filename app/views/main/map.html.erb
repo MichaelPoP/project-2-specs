@@ -11,7 +11,7 @@
       <li><%= link_to "Sign Out", logout_path, method: :delete %></li></div>
       </ul>
     </div>
-
+    <div id="bar"></div>
   </nav>
 
 
@@ -23,10 +23,19 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">How to use Good Hoods</h4>
       </div>
-      <div class="modal-body text-left">
-        <p>Good Hoods lets you search for information about neighborhoods you're interested in.</p>
-        <p>Type in a City and State to pull up a listing of all the neighborhoods in that city.</p>
-        <p>Click on a neighborhood and we'll display information from that neighborhood that we've pulled from a variety of services, like Google Places, Zillow and The Weather Underground.</p>
+      <div class="modal-body text-left overflow">
+        <h4 class="modal_exp"><b>Thanks for trying GoodHoods!</b></h4>
+        <p class="modal_exp">Good Hoods lets you search for information about neighborhoods you're interested in.</p>
+        <p class="modal_exp">Type in a City and State to pull up a listing of all the neighborhoods in that city.</p>
+        <p class="modal_exp">Click on a neighborhood and we'll display information from that neighborhood that we've pulled from a variety of services, like Google Places, Zillow and The Weather Underground.</p>
+        <hr>
+        <h2 class="steps"><b>1)</b>Enter the name of a <b>city</b> you want to live in and the corresponding <b>state</b>.</h2>
+        <%= image_tag("Input_help.png", size: "500x250")  %>
+        <h2 class="steps"><b>2)</b>After the map scrolls to your chosen city, all of the available hoods will be shown in green. Choose one to explore by clicking on the map or on the list to the left of the map.</h2>
+        <%= image_tag("hoods_help.png", size: "500x300")  %>
+        <h2 class="steps"><b>3)</b>Upon clicking a hood info about it will be displayed to the right and the map will populate with nearby places of interest. </h2>
+        <%= image_tag("fav_help.png", size: "500x300")  %>
+        <h3 class="steps">If you like the hood you can double click it on the map to add a star. To save it for later click the 'favorite' star to add it on your profile.</h3>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -42,9 +51,11 @@
       <div class="text-center">
           <%= form_tag search_path, method: "get", id:"search-input", class:"controls" do %>
           <%= label_tag(:city, "City: ") %>
-          <%= text_field_tag(:city) %>
+          <%= text_field_tag(:city, nil, class:'input-large') %>
           <%= label_tag(:state, "State: ") %>
-          <%= text_field_tag(:state) %>
+          <button id="less" type="button" class="btn btn-xs btn-danger" >-</button>
+          <%= text_field_tag(:state, nil, class:'input-small') %>
+          <button id="more" type="button" class="btn btn-xs btn-success">+</button>
           <%= submit_tag("Search Hoods", :class => "btn-search") %>
         <% end %>
       </div>
@@ -79,6 +90,51 @@
   </div>
 
 </div>
+<script type="text/javascript">
+var states = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
+var count = 0
+  $('#less').click(function(e) {
+    e.preventDefault();
+    count--
+    $(document).ready(function(){
+      $('.input-small').val(states[count]);
+    });
+  });
 
+// $('#less').on('mousedown', function(e) {
+//   e.preventDefault();
+//   $(document).ready(function(){
+//     if (e.type == "mousedown") {
+//         var cycle = setInterval(function(){
+//           count--
+//           $('.input-small').val(states[count]);
+//         }, 200);
+//     }
+//   });
+// });
+
+// $('#less').on('mouseup', function(e) {
+//   e.preventDefault();
+//     clearInterval(cycle);
+ 
+// });
+
+   $('#more').click(function(e) {
+    e.preventDefault();
+    count++
+    $(document).ready(function(){
+      $('.input-small').val(states[count]);
+    });
+  });
+
+
+
+
+// $("p").mouseup(function(){
+//     $(this).append('<span style="color:#F00;">Mouse up.</span>');
+// }).mousedown(function(){
+//     $(this).append('<span style="color:#00F;">Mouse down.</span>');
+// });
+</script>
 </body>
 </html>
