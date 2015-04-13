@@ -8,7 +8,7 @@
     border-radius: 5px;
     border: 0;
     height: 35px; 
-    background-color: rgba(255, 102, 102, 0.9);
+    background-color: rgba(35, 117, 34, .7);
     margin: 2px;
     width: 140px;
     padding: 5px;
@@ -27,14 +27,15 @@
   }
   
   a {
-    color: rgba(255, 102, 102, 0.9);
+    color: rgba(35, 117, 34, .8);
   }
   
   a:hover {
-    color: rgba(255, 102, 102, 0.9);
-    background-color: rgba(255, 102, 102, 0.2);
+    color: rgba(35, 117, 34, .5);
+    background-color: rgba(35, 117, 34, .5);
     padding: 3px;
     text-decoration: none;
+    border-radius: 10px;
   }
 
   .my-button1 {
@@ -46,8 +47,8 @@
   }
 
   .my-input {
-     background-color: rgba(255, 102, 102, 0.0);
-     border: 1px solid rgba(255, 102, 102, 0.9);
+     background-color: rgba(35, 117, 34, .5);
+     border: 1px solid rgba(35, 117, 34, .8);
   }
 
 </style>
@@ -56,7 +57,7 @@
 
         <script type="text/javascript">
             $(document).ready(function() {
-                $("body").backgroundCycle({
+                $(".slideshow").backgroundCycle({
                     imageUrls: [
                         "<%= asset_path('bg5_low.jpg') %>", 
                         "<%= asset_path('bg2.jpg') %>",
@@ -71,7 +72,7 @@
             });
         </script>
 
-<div class="container-fluid">
+<div class="container-fluid slideshow">
 
 <div class="row">
   <div class="col-md-12">
@@ -91,7 +92,7 @@
 
 <div class="row">
   <div class="col-md-12">
-    <%= image_tag("header.png", size: "650x75") %>
+    <%= image_tag("headerGreen.png", size: "650x75") %>
   </div>
 </div>
 

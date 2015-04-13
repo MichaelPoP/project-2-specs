@@ -31,7 +31,7 @@ $.fn.backgroundCycle = function(options) {
     var marginBottom = 0;
     var marginLeft = 0;
 
-    if (!this.is("body")) {
+    if (!this.is(".slideshow")) {
         this.css({
             position: 'relative'
         });

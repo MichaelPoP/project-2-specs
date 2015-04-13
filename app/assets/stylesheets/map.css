@@ -2,7 +2,11 @@ body {
   font-family: 'Roboto', sans-serif;
   margin-top: 50px;
   padding-top: 30px;
+  background-color: #A4BFAB !important;
  }
+ .slideshow {
+padding-top: 700px;
+}
 
 /*NAVBAR STYLE*/
 .mynav {
@@ -192,7 +196,7 @@ input {
 
 
 .bolded {
-  background-color: rgba(255, 102, 102, 1);
+  background-color: rgba(35, 117, 34, .6);
   color: white;
   font-weight: 700;
   padding:2px;
@@ -203,21 +207,23 @@ input {
 }
 
 a {
-  color: rgba(255, 102, 102, 0.9);
+  color: rgba(35, 117, 34, .9);
 }
 
 a:hover {
   color: rgba(255, 102, 102, 0.9);
   background: rgba(255, 102, 102, 0.2);
+  border-radius: 7px;
   text-decoration: none;
 }
 
 a:visited {
-  color: rgba(255, 102, 102, 0.9);
+  color: rgba(35, 117, 34, .3);
+  text-decoration: underline;
 }
 
 a:active {
-  color: rgba(255, 102, 102, 0.9);
+  color: rgba(35, 117, 34, .5);
 }
 
 #nohover a:hover {
@@ -237,10 +243,17 @@ a:active {
   margin-top: 250px;
 }*/ 
 
+
+/*FAVORITES PAGE STYLE*/
 .fav {
   display: none;
 }
 
 .favorited {
   background-color: rgba(51, 204, 51, 0.3);
+}
+
+.backbtn {
+  color: white !important;
+  float: left;
 }
