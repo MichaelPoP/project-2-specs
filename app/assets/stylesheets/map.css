@@ -47,7 +47,7 @@ width: 100%;
 }
 
 .mynav ul li a:hover {
-    color: rgba(255, 102, 102, 1);
+    color: white;
     background-color: rgba(255, 255, 255, 1);
     text-decoration: none;
     border-radius: 5px;
@@ -285,4 +285,12 @@ a:active {
 .backbtn {
   color: white !important;
   float: left;
+}
+
+.FavTitle {
+  font-size: 25px;
+}
+
+.FavContent {
+  font-size: 20px;
 }
