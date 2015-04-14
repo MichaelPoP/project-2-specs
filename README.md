@@ -3,7 +3,7 @@
 We built Good Hoods to let you and other prospective home buyers quickly and easily research neighborhoods where you might one day live. We consolidate data from Google Maps, Zillow and The Weather Underground to give you pertinent information about specific neighborhoods you’re interested in, and to save you time to do other things – like secure a home loan!
 
 ## EXTERNAL HOSTING
-http://goodhoods-app.heroku.com
+https://goodhoods3.herokuapp.com/
 
 ## WIREFRAMES & ERD
 https://www.dropbox.com/sh/wqiytrp0j1b6imo/AADYSb0OUMo_yhAb5LuBGBS-a?dl=0
