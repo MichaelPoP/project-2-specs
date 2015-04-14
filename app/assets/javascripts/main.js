@@ -8,8 +8,8 @@ function initialize() {
   };
 
   var mapOptions = {
-    zoom: 7,
-    center: new google.maps.LatLng(37.7749300 , -122.4194200),
+    zoom: 3,
+    center: new google.maps.LatLng(37.09024, -95.712891),
     panControl: true,
     zoomControl: true,
     mapTypeControl: true,
@@ -253,7 +253,9 @@ $(document).ready(function() {
     $("#city-summary").empty();
     $("#people").empty();
     $("#characteristics").empty();
+    $("#agesTitle").empty();
     $("#ages").empty();
+    $("#ages2").empty();
     $("#kids").empty();
     $("#relationships").empty();
     $("#charts").empty();
@@ -270,93 +272,6 @@ $(document).ready(function() {
     mapCall();
     clearData();
     hoodBounds('/'+state+'.json');
-    // if (state == "CA") {
-    // hoodBounds('/CA.json');
-    // } else if (state == "AK") {
-    // hoodBounds('/AK.json');
-    // } else if (state == "AZ") {
-    // hoodBounds('/AZ.json');
-    // } else if (state == "CO") {
-    // hoodBounds('/CO.json');
-    // } else if (state == "FL") {
-    // hoodBounds('/FL.json');
-    // } else if (state == "IL") {
-    // hoodBounds('/IL.json');
-    // } else if (state == "MA") {
-    // hoodBounds('/MA.json');
-    // } else if (state == "NY") {
-    // hoodBounds('/NY.json');
-    // } else if (state == "OR") {
-    // hoodBounds('/OR.json');
-    // } else if (state == "AL") {
-    // hoodBounds('/AL.json');
-    // } else if (state == "AR") {
-    // hoodBounds('/AR.json');
-    // } else if (state == "CT") {
-    // hoodBounds('/CT.json');
-    // } else if (state == "DC") {
-    // hoodBounds('/DC.json');
-    // } else if (state == "GA") {
-    // hoodBounds('/GA.json');
-    // } else if (state == "HI") {
-    // hoodBounds('/HI.json');
-    // } else if (state == "ID") {
-    // hoodBounds('/ID.json');
-    // } else if (state == "IN") {
-    // hoodBounds('/IN.json');
-    // } else if (state == "IA") {
-    // hoodBounds('/IA.json');
-    // } else if (state == "KC") {
-    // hoodBounds('/KC.json');
-    // } else if (state == "KY") {
-    // hoodBounds('/KY.json');
-    // } else if (state == "LA") {
-    // hoodBounds('/LA.json');
-    // } else if (state == "MA") {
-    // hoodBounds('/MA.json');
-    // } else if (state == "MD") {
-    // hoodBounds('/MD.json');
-    // } else if (state == "ME") {
-    // hoodBounds('/ME.json');
-    // } else if (state == "MI") {
-    // hoodBounds('/MI.json');
-    // } else if (state == "MN") {
-    // hoodBounds('/MN.json');
-    // } else if (state == "MO") {
-    // hoodBounds('/MO.json');
-    // } else if (state == "MS") {
-    // hoodBounds('/MS.json');
-    // } else if (state == "MT") {
-    // hoodBounds('/MT.json');
-    // } else if (state == "NC") {
-    // hoodBounds('/NC.json');
-    // } else if (state == "NE") {
-    // hoodBounds('/NE.json');
-    // } else if (state == "NJ") {
-    // hoodBounds('/NJ.json');
-    // } else if (state == "NM") {
-    // hoodBounds('/NM.json');
-    // } else if (state == "NV") {
-    // hoodBounds('/NV.json');
-    // } else if (state == "OH") {
-    // hoodBounds('/OH.json');
-    // } else if (state == "PA") {
-    // hoodBounds('/PA.json');
-    // } else if (state == "RI") {
-    // hoodBounds('/RI.json');
-    // } else if (state == "TN") {
-    // hoodBounds('/TN.json');
-    // } else if (state == "TX") {  //THIS ONE IS HUGE!!
-    // hoodBounds('/TX.json');
-    // } else if (state == "UT") {
-    // hoodBounds('/UT.json');
-    // } else if (state == "VA") {
-    // hoodBounds('/VA.json');
-    // } else if (state == "WA") {
-    // hoodBounds('/WA.json');
-    // } else if (state == "WI") {
-    // hoodBounds('/WI.json');
-    // }
   });
   
   $("#map-canvas").on("click", function(e) {
@@ -374,7 +289,7 @@ $(document).ready(function() {
           console.log(latitude + " " + longitude);
           // map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
           map.setCenter(new google.maps.LatLng(latitude,longitude));
-          // map.setZoom(13);
+          map.setZoom(13);
           console.log(latitude);      
         }).done(
         function() {
@@ -384,6 +299,7 @@ $(document).ready(function() {
           initPlaces();
         }); //end done function
   }); //end click listener
+
   $("#hoods").on("click", "#neighborhood", function(e) {
     e.preventDefault();
     $(".fav").show();
@@ -527,16 +443,17 @@ function mapCall() {
     for (n = 0; n < characteristics[1].characteristic.length; n++) {
           $("#characteristics").append("<p>" + characteristics[1].characteristic[n] + "</p>");
     }
-    $("#characteristics").append("<p><i>" + characteristics[2].type + "</i></p>");
-    for (n = 0; n < characteristics[2].characteristic.length; n++) {
-          $("#characteristics").append("<p>" + characteristics[2].characteristic[n] + "</p>");
-    }
+
+    // $("#characteristics").append("<p><i>" + characteristics[2].type + "</i></p>");
+    // for (n = 0; n < characteristics[2].characteristic.length; n++) {
+    //       $("#characteristics").append("<p>" + characteristics[2].characteristic[n] + "</p>");
+    // }
 
     var ages = zillow.demographics.response.pages.page[2].tables.table[1];
-    $("#ages").append("<p class='bolded'> Age demographics by decade</p>");
+    $("#agesTitle").append("<p class='bolded'> Age demographics by decade</p>");
     for (i = 0; i < ages.data.attribute.length; i++) {
       $("#ages").append("<p><i>" + ages.data.attribute[i].name + "</i></p>");
-      $("#ages").append("<p>" + (100 * ages.data.attribute[i].value).toFixed(2) + "%</p>");
+      $("#ages2").append("<p>" + (100 * ages.data.attribute[i].value).toFixed(2) + "%</p>");
     }
 
     var relationships = zillow.demographics.response.pages.page[2].tables.table[4];
@@ -559,6 +476,7 @@ function mapCall() {
       $("#charts").append("<p><i>" + charts[7].name + "</i></p>");
       $("#charts").append("<p><img src=" + charts[7].url + "></p>");
     }
+
 function initPlaces() {
   console.log("check!");
   console.log(result);
@@ -568,7 +486,7 @@ function initPlaces() {
   var loc = new google.maps.LatLng(latitude,longitude);
   var request = {
     location: loc,
-    radius: 1700,
+    radius: 2000,
     types: ["airport", "restaurant", "campground", "doctor", "hardware_store", "grocery_or_supermarket", "movie_theater", "place_of_worship", "shopping_mall", "stadium", "train_station", "zoo"]
   };
   var service = new google.maps.places.PlacesService(map);
@@ -610,18 +528,17 @@ function markPlaces(result, status) {
     } else {
       $(".listItems").append("<div class='item'>Nothing nearby! Try another location!</div>");
     }
-    // $(".instructPanel > img").attr("src", "map_places_marker_bar.png");
-    // $(".instructPanel > div").text("Info about the places marked can be seen in the panel on the right!");
-  }
-  function openInfoWindow() {
+}//END OF MARK PLACES FUNCTION
+
+function openInfoWindow() {
     infowindow.setContent('<div style="color:black; font-family:arial; width: 90px; font-variant: small-caps; font-weight: 800">' + this.title + '</div>');
     // console.log("infowindow",infowindow);
     // console.log("placesMarker",this);
     infowindow.open(map, this);
     $(this).css("background-color", "#94BF74");
-  }
+}
 
-  function checkFav() {
+function checkFav() {
     $("#fav").removeClass("favorited");
     $.ajax({
       url: '/checkfav',
@@ -637,9 +554,9 @@ function markPlaces(result, status) {
         }
       }
     });
-  }
+}//END OF CHECK FAV FUNCTION
 
-    $("#fav").click(function() {
+  $("#fav").click(function() {
       self = $(this);
       $.ajax({
         url: '/favorites',
@@ -658,7 +575,7 @@ function markPlaces(result, status) {
         }
       }
     );
-    });
+  });
 
     $("#comment").submit(function() {
       $.ajax({
