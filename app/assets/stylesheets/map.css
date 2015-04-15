@@ -2,18 +2,20 @@ body {
   font-family: 'Roboto', sans-serif;
   margin-top: 50px;
   padding-top: 30px;
-  background-color: #3D9C01 !important;
+  background-color: #98FF83 !important;
  }
+ /*#98FF83*/
  /*#62B067*/
 /*#63B757*/
  /*#A4BFAB*/
+ /*#3D9C01*/
  .slideshow {
 padding-top: 700px;
 }
 
 /*NAVBAR STYLE*/
 .mynav {
-background-color: rgba(255, 255, 255, .4);
+background-color: rgba(52, 181, 29, .8);
 color: #888;
 display: block;
 margin: 0;
@@ -124,10 +126,10 @@ border-bottom:5px double #3143E6;
       inset 0 0 8px  rgba(0,0,0,0.1),
             0 0 16px rgba(0,0,0,0.1); 
     padding: 10px;
-    background: rgba(255,255,255,.3);
+    background: rgba(43,189,73,.8);
     margin: 0 0 4px 0;
-    color: #348501;
-    text-shadow:1px 1px 2px white, -1px -1px 2px white, -1px 1px 2px white, 1px -1px 2px white;
+    color: #3142D3;
+    text-shadow:1px 1px 1px white, -1px -1px 1px white, -1px 1px 1px white, 1px -1px 1px white;
     font-weight: 700;
     font-size: 22px;
 }
@@ -168,7 +170,7 @@ border-bottom:5px double #3143E6;
       inset 0 0 8px  rgba(0,0,0,0.1),
             0 0 16px rgba(0,0,0,0.1); 
     padding: 7px;
-    background: rgba(255,255,255,0.3);
+    background: rgba(43,189,73,.8);
     margin: 0 0 3px 0;
     color: rgba(35, 117, 34, 1);
     text-shadow:1px 1px 2px white, -1px -1px 2px white, -1px 1px 2px white, 1px -1px 2px white;
