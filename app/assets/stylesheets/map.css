@@ -2,8 +2,9 @@ body {
   font-family: 'Roboto', sans-serif;
   margin-top: 50px;
   padding-top: 30px;
-  background-color: #98FF83 !important;
+  background-color: #F4FFF5 !important;
  }
+ /*#D7EBD1*/
  /*#98FF83*/
  /*#62B067*/
 /*#63B757*/
@@ -16,6 +17,15 @@ padding-top: 700px;
 /*NAVBAR STYLE*/
 .mynav {
 background-color: rgba(52, 181, 29, .8);
+color: #888;
+display: block;
+margin: 0;
+overflow: hidden;
+width: 100%; 
+border-bottom:5px double #3143E6;
+}
+.mynav:hover {
+background-color: rgba(52, 181, 29, 1);
 color: #888;
 display: block;
 margin: 0;
@@ -126,12 +136,33 @@ border-bottom:5px double #3143E6;
       inset 0 0 8px  rgba(0,0,0,0.1),
             0 0 16px rgba(0,0,0,0.1); 
     padding: 10px;
-    background: rgba(43,189,73,.8);
+    background: rgba(43,189,73,.7);
     margin: 0 0 4px 0;
     color: #3142D3;
     text-shadow:1px 1px 1px white, -1px -1px 1px white, -1px 1px 1px white, 1px -1px 1px white;
     font-weight: 700;
     font-size: 22px;
+    text-align: center;
+}
+#city:hover {
+    border: 2px outset #3143E6; 
+    -webkit-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    padding: 10px;
+    background: rgba(43,189,73,1);
+    margin: 0 0 4px 0;
+    color: #3142D3;
+    text-shadow:1px 1px 1px white, -1px -1px 1px white, -1px 1px 1px white, 1px -1px 1px white;
+    font-weight: 700;
+    font-size: 22px;
+    text-align: center;
 }
 .inputLabel {
   font-size: 22px;
@@ -145,18 +176,20 @@ border-bottom:5px double #3143E6;
 }
 #less {
    position: relative;
-   left: 24px;
-   top: -37px;
+   left: 27px;
+   top: -34px;
    width:19px;
    font-size: 14px;
+   height: 17px;
 }
 #more {
   position: relative;
-  top: -37px;
+  top: -34px;
   right: 25px;
   width:19px;
   font-size: 14px;
   text-align: center;
+  height: 17px;
 }
 #state {
      border: 2px outset #3143E6; 
@@ -170,13 +203,35 @@ border-bottom:5px double #3143E6;
       inset 0 0 8px  rgba(0,0,0,0.1),
             0 0 16px rgba(0,0,0,0.1); 
     padding: 7px;
-    background: rgba(43,189,73,.8);
+    background: rgba(43,189,73,.7);
     margin: 0 0 3px 0;
-    color: rgba(35, 117, 34, 1);
+    color: #3142D3;
     text-shadow:1px 1px 2px white, -1px -1px 2px white, -1px 1px 2px white, 1px -1px 2px white;
     font-weight: 700;
     font-size: 19px;
     width: 49px;
+    text-align: center;
+}
+#state:hover {
+     border: 2px outset #3143E6; 
+    -webkit-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    padding: 7px;
+    background: rgba(43,189,73,1);
+    margin: 0 0 3px 0;
+    color: #3142D3;
+    text-shadow:1px 1px 2px white, -1px -1px 2px white, -1px 1px 2px white, 1px -1px 2px white;
+    font-weight: 700;
+    font-size: 19px;
+    width: 49px;
+    text-align: center;
 }
 .btn-search {
  border-radius: 5px 5px 5px 5px;

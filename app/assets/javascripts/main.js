@@ -440,8 +440,14 @@ function mapCall() {
     var characteristics = zillow.demographics.response.pages.page[2].uniqueness.category;
     $("#characteristics").append("<p class='bolded'> Resident Characteristics</p>");
     $("#characteristics").append("<p><b>" + characteristics[1].type + "</b></p>");
-    for (n = 0; n < characteristics[1].characteristic.length; n++) {
-          $("#characteristics").append("<p>" + characteristics[1].characteristic[n] + "</p>");
+    if (Array.isArray(characteristics[1].characteristic) === true) {
+      for (n = 0; n < characteristics[1].characteristic.length; n++) {
+            $("#characteristics").append("<p>" + characteristics[1].characteristic[n] + "</p>");
+            // console.log(characteristics[1].characteristic[n]);
+            console.log(characteristics);
+      }
+    } else {
+      $("#characteristics").append("<p>" + characteristics[1].characteristic + "</p>");
     }
 
     // $("#characteristics").append("<p><i>" + characteristics[2].type + "</i></p>");
