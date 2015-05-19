@@ -16,6 +16,7 @@ padding-top: 700px;
 
 /*NAVBAR STYLE*/
 .mynav {
+/*visibility: hidden;*/
 background-color: rgba(52, 181, 29, .8);
 color: #888;
 display: block;
@@ -181,6 +182,7 @@ border-bottom:5px double #3143E6;
    width:48px;
    font-size: 14px;
    height: 38px;
+   margin-left: 23px;
 }
 #more {
   position: relative;
