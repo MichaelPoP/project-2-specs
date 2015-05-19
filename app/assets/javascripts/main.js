@@ -223,7 +223,9 @@ var styledMap = new google.maps.StyledMapType(styleArray,
         // startAPICalls();
         // initPlaces();
         // map.setZoom(13);
-        mapClickHood = event.feature.k.NAME;  
+        console.log(event.feature.A.NAME);
+        mapClickHood = event.feature.A.NAME;  
+
   });
   map.data.addListener('dblclick', function(event) {
    // event.feature.setProperty({fillColor: 'gold'});
