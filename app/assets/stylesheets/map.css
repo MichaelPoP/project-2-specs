@@ -141,8 +141,9 @@ border-bottom:5px double #3143E6;
     color: #3142D3;
     text-shadow:1px 1px 1px white, -1px -1px 1px white, -1px 1px 1px white, 1px -1px 1px white;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 20px;
     text-align: center;
+    width:200px;
 }
 #city:hover {
     border: 2px outset #3143E6; 
@@ -161,14 +162,15 @@ border-bottom:5px double #3143E6;
     color: #3142D3;
     text-shadow:1px 1px 1px white, -1px -1px 1px white, -1px 1px 1px white, 1px -1px 1px white;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 20px;
     text-align: center;
+    width:200px;
 }
 .inputLabel {
   font-size: 22px;
 }
 .adjust {
-  margin-right: -22px;
+  margin-right: -40px;
   margin-left: 5px;
 }
 .text-center {
@@ -180,7 +182,9 @@ border-bottom:5px double #3143E6;
    top: -34px;
    width:19px;
    font-size: 14px;
-   height: 17px;
+   height: 20px;
+   padding-bottom:3px;
+   padding-right: 13px;
 }
 #more {
   position: relative;
@@ -189,7 +193,7 @@ border-bottom:5px double #3143E6;
   width:19px;
   font-size: 14px;
   text-align: center;
-  height: 17px;
+  height: 20px;
 }
 #state {
      border: 2px outset #3143E6; 

@@ -269,8 +269,17 @@ $(document).ready(function() {
     $(".info-div").removeClass("overflow");
     $(".hood-div").addClass("overflow");
     $("#hoods").empty();
-    city = $("#city").val();
+    cityLoweCase = $("#city").val();
+    strA = cityLoweCase.split(" ");
+    console.log(strA);
+    var newArr = [];
+    for(i=0;i<strA.length;i++){
+      newArr.push(strA[i].charAt(0).toUpperCase() + strA[i].slice(1)); 
+    }
+    city = newArr.join(' ');
+    console.log(city);
     state = $("#state").val();
+    console.log(city, state);
     mapCall();
     clearData();
     hoodBounds('/'+state+'.json');

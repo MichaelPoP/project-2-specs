@@ -52,10 +52,11 @@
           <%= form_tag search_path, method: "get", id:"search-input", class:"controls" do %>
           <%= label_tag(:city, "City ", class:'inputLabel') %>
           <%= text_field_tag(:city, nil, class:'input-large') %>
+          <!-- <%= select_tag(:state, "state", class:'another input') %> -->
           <%= label_tag(:state, "State ", class:'inputLabel adjust') %>
-          <button id="less" type="button" class="btn btn-xs btn-danger" >-</button>
+          <button id="less" type="button" class="btn btn-xs btn-danger" >A</button>
           <%= text_field_tag(:state, nil, class:'input-small') %>
-          <button id="more" type="button" class="btn btn-xs btn-success">+</button>
+          <button id="more" type="button" class="btn btn-xs btn-success">Z</button>
           <%= submit_tag("Search Hoods", :class => " btn-lg btn-search") %>
         <% end %>
       </div>

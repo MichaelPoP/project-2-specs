@@ -11,7 +11,10 @@ body {
  /*#A4BFAB*/
  /*#3D9C01*/
  .slideshow {
-padding-top: 700px;
+  padding-top: 700px;
+}
+.slideshow2 {
+  padding-top: 700px;
 }
 
 /*NAVBAR STYLE*/
