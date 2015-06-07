@@ -137,7 +137,7 @@ border-bottom:5px double #3143E6;
             0 0 16px rgba(0,0,0,0.1); 
     padding: 10px;
     background: rgba(43,189,73,.7);
-    margin: 0 0 4px 0;
+    margin-right:5px;
     color: #3142D3;
     text-shadow:1px 1px 1px white, -1px -1px 1px white, -1px 1px 1px white, 1px -1px 1px white;
     font-weight: 700;
@@ -158,7 +158,7 @@ border-bottom:5px double #3143E6;
             0 0 16px rgba(0,0,0,0.1); 
     padding: 10px;
     background: rgba(43,189,73,1);
-    margin: 0 0 4px 0;
+    margin-right:5px;
     color: #3142D3;
     text-shadow:1px 1px 1px white, -1px -1px 1px white, -1px 1px 1px white, 1px -1px 1px white;
     font-weight: 700;
@@ -208,12 +208,11 @@ border-bottom:5px double #3143E6;
             0 0 16px rgba(0,0,0,0.1); 
     padding: 7px;
     background: rgba(43,189,73,.7);
-    margin: 0 0 3px 0;
     color: #3142D3;
     text-shadow:1px 1px 2px white, -1px -1px 2px white, -1px 1px 2px white, 1px -1px 2px white;
     font-weight: 700;
     font-size: 19px;
-    width: 49px;
+    width: 200px;
     text-align: center;
 }
 #state:hover {
@@ -229,12 +228,11 @@ border-bottom:5px double #3143E6;
             0 0 16px rgba(0,0,0,0.1); 
     padding: 7px;
     background: rgba(43,189,73,1);
-    margin: 0 0 3px 0;
     color: #3142D3;
     text-shadow:1px 1px 2px white, -1px -1px 2px white, -1px 1px 2px white, 1px -1px 2px white;
     font-weight: 700;
     font-size: 19px;
-    width: 49px;
+    width: 200px;
     text-align: center;
 }
 .btn-search {

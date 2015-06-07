@@ -278,6 +278,8 @@ $(document).ready(function() {
     }
     city = newArr.join(' ');
     console.log(city);
+
+    
     state = $("#state").val();
     console.log(city, state);
     mapCall();
